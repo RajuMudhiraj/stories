@@ -1,0 +1,25 @@
+{
+  "name": "ms_instagram-stories_draco_tep_online_full-time_2021_2",
+  "version": "1.0.0",
+  "description": "# Learning competencies:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exponentsoftware/MS_Instagram-stories_Draco_Tep_Online_Full-time_2021_2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exponentsoftware/MS_Instagram-stories_Draco_Tep_Online_Full-time_2021_2/issues"
+  },
+  "homepage": "https://github.com/exponentsoftware/MS_Instagram-stories_Draco_Tep_Online_Full-time_2021_2#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.14"
+  }
+}
