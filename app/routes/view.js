@@ -15,7 +15,6 @@ router.post('/', checkAuth, (req, res) => {
     story
         .save()
         .then(result => {
-
             res.status(201).json({
                 result
             })
@@ -33,7 +32,8 @@ router.post('/', checkAuth, (req, res) => {
 // Handling GET request to /story
 router.get('/', checkAuth, (req, res) => {
     Story.find()
-        .select('imageLink _id viewedBy')
+        .select('imageLink _id')
+        .populate('viewedBy')
         .exec()
         .then(docs => {
             // console.log(docs)
@@ -63,8 +63,8 @@ router.get('/', checkAuth, (req, res) => {
 // Handling GET by ID request to /story
 router.get('/:imageId', checkAuth, (req, res) => {
     const id = req.params.imageId
-
     Story.findById(id)
+        .populate('viewedBy')
         .exec()
         .then(story => {
             if (story) {
@@ -82,19 +82,6 @@ router.get('/:imageId', checkAuth, (req, res) => {
                 error: err
             })
         })
-
-    var obj = { name: req.userData.name };
-    Story.findOneAndUpdate(
-        { _id: id },
-        { $push: { viewedBy: obj }, $inc: {count : 1 }},
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
-            }
-        });
-
 })
 
 

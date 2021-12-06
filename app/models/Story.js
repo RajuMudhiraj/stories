@@ -4,7 +4,8 @@ const View = require('./View')
 
 const storySchema = Schema({
     imageLink: { type: String, required: true },
-    viewedBy:[{type: Schema.Types.ObjectId, ref:"View"}]
+    count:{type:Number, default:0},
+    viewedBy:[{name:String},{timestamps:true}]
 }, { timestamps: true });
 
 module.exports = mongoose.model('Story', storySchema)
