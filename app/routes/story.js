@@ -86,7 +86,7 @@ router.get('/:imageId', checkAuth, (req, res) => {
     var obj = { name: req.userData.name };
     Story.findOneAndUpdate(
         { _id: id },
-        { $push: { viewedBy: obj }, $inc: {count : 1 }},
+        { $push: { viewedBy: obj }, $inc: { count: 1 } },
         function (error, success) {
             if (error) {
                 console.log(error);
