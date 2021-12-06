@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { checkAuth, checkAuthAndAdmin } = require('../middleware/check-auth')
 const Story = require('../models/Story')
-const View = require('../models/View')
 
 
 
